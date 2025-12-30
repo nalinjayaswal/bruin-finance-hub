@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.vercel.deepnative.twa",
+            "sha256_cert_fingerprints": [
+                "7E:0D:74:73:11:77:D3:E3:F5:48:DE:1C:B2:29:3D:81:27:56:89:03:DD:F8:62:CA:3C:61:EA:39:D9:52:5E:66"
+            ]
+        }
+    }
+]

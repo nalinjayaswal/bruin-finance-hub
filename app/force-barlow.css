@@ -1,0 +1,35 @@
+/* FORCE BARLOW FONT EVERYWHERE - OVERRIDE ALL OTHER FONTS */
+
+:root {
+  --font-barlow: 'Barlow', sans-serif;
+}
+
+html,
+body,
+* {
+  font-family: var(--font-barlow), 'Barlow', sans-serif !important;
+}
+
+/* Override all possible selectors */
+div, span, p, a, button, input, textarea, select, label, h1, h2, h3, h4, h5, h6,
+ul, ol, li, table, tr, td, th, form, nav, header, footer, section, article, aside {
+  font-family: var(--font-barlow), 'Barlow', sans-serif !important;
+}
+
+/* Force on pseudo elements */
+*::before,
+*::after {
+  font-family: var(--font-barlow), 'Barlow', sans-serif !important;
+}
+
+/* Override any CSS class that might set a different font */
+[class*="font"],
+[class*="text"],
+.font-ui,
+.font-heading,
+.font-sans,
+.font-mono {
+  font-family: var(--font-barlow), 'Barlow', sans-serif !important;
+}
+
+

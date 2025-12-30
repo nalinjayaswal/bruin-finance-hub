@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Native ∀i Design System
+   Color Palette:
+   - Void Black: #0B0D10 (background)
+   - Charcoal: #1A1F24 (elevated surfaces)
+   - Steel Gray: #2A3038 (borders)
+   - Pure White: #FFFFFF (primary text)
+   - Mist Gray: #9AA4AF (secondary text)
+   - ∀ Teal: #00E5C4 (accent)
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Void Black - Main background */
+    --background: 216 24% 5%;
+    --foreground: 0 0% 100%;
+
+    /* Charcoal - Elevated surfaces/cards */
+    --card: 213 16% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 213 16% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    /* ∀ Teal - Primary accent */
+    --primary: 168 100% 45%;
+    --primary-foreground: 216 24% 5%;
+
+    /* Slightly muted teal for secondary */
+    --secondary: 213 16% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Steel Gray for muted elements */
+    --muted: 216 12% 18%;
+    --muted-foreground: 210 10% 65%;
+
+    /* ∀ Teal accent */
+    --accent: 168 100% 45%;
+    --accent-foreground: 216 24% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Steel Gray borders */
+    --border: 214 12% 20%;
+    --input: 214 12% 20%;
+    --ring: 168 100% 45%;
+
+    --radius: 0.75rem;
+    
+    /* Native ∀i Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(168 100% 45%) 0%, hsl(180 80% 35%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(216 24% 5%) 0%, hsl(220 20% 8%) 50%, hsl(216 24% 5%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(168 100% 45% / 0.2) 0%, hsl(180 80% 35% / 0.1) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(213 16% 12% / 0.8) 0%, hsl(213 16% 12% / 0.4) 100%);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 80px hsl(168 100% 45% / 0.3);
+    --glow-accent: 0 0 120px hsl(168 100% 45% / 0.15);
+    --glow-soft: 0 0 40px hsl(168 100% 45% / 0.1);
+
+    --sidebar-background: 216 24% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 168 100% 45%;
+    --sidebar-primary-foreground: 216 24% 5%;
+    --sidebar-accent: 213 16% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 12% 20%;
+    --sidebar-ring: 168 100% 45%;
+  }
+
+  /* Force dark mode as default for Native brand */
+  .dark {
+    --background: 216 24% 5%;
+    --foreground: 0 0% 100%;
+    --card: 213 16% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 213 16% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 168 100% 45%;
+    --primary-foreground: 216 24% 5%;
+    --secondary: 213 16% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 12% 18%;
+    --muted-foreground: 210 10% 65%;
+    --accent: 168 100% 45%;
+    --accent-foreground: 216 24% 5%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 12% 20%;
+    --input: 214 12% 20%;
+    --ring: 168 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+  
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-border/60;
+  }
+  
+  .glow-teal {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-soft {
+    box-shadow: var(--glow-soft);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+}
